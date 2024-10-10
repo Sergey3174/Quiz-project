@@ -1,0 +1,20 @@
+.container {
+	width: 100%;
+}
+
+.buttons {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.buttons button {
+	margin: 10px;
+	width: 30%;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.history {
+	margin: 10px 30px;
+}

@@ -1,0 +1,8 @@
+.question-container {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid #000;
+	border-radius: 3px;
+	margin-bottom: 4px;
+	padding: 2px 4px;
+}
