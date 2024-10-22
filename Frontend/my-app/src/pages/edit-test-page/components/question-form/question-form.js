@@ -14,6 +14,7 @@ export const QuestionForm = ({
 	const [newQuestion, setNewQuestion] = useState(question);
 	const [newOptions, setNewOptions] = useState(options);
 	const [newCorrect, setNewCorrect] = useState(correct);
+	const [error, setError] = useState(null);
 
 	const handleQuestion = ({ target }) => setNewQuestion(target.value);
 
@@ -31,6 +32,11 @@ export const QuestionForm = ({
 			options: newOptions,
 			correct: newCorrect,
 		};
+
+		if (!newCorrect) {
+			setError('Выберите правильный ответ');
+			return;
+		}
 
 		if (type === 'edit') {
 			fetch(`http://localhost:3010/${id}`, {
@@ -87,6 +93,8 @@ export const QuestionForm = ({
 						))}
 						<button onClick={addNewOption}>Добавить вариант ответа</button>
 					</div>
+
+					{error && <div>{error}</div>}
 					<button onClick={cancel}>Отмена</button>
 					<button type="submit">Сохранить</button>
 				</form>
